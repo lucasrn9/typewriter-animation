@@ -1,0 +1,41 @@
+h1{
+    font-size: 8rem;
+    font-family: monospace;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    width: fit-content;
+}
+
+h1::before,h1::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+h1::before{
+    background-color: white;
+    animation: typeWriter 1.9s 0.5s steps(5) forwards;
+}
+
+h1::after{
+    width: 0.05em;
+    background-color: black;
+    animation:  typeWriter 1.9s 0.5s steps(5) forwards,
+                blink 0.9s steps(2,start) infinite;
+}
+
+@keyframes typeWriter{
+    100%{
+        left: 100%;
+    }
+}
+
+@keyframes blink{
+    100%{
+        visibility: hidden;
+    }
+}
